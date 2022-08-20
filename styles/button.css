@@ -1,0 +1,76 @@
+.css-button-arrow--black {
+    min-width: 130px;
+    height: 40px;
+    color: var(--color-contrast);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--color-dark)
+}
+
+.css-button-arrow--black:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
+.css-button-arrow--black:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+.css-button-arrow--black:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+}
+
+.btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 0.8px solid;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: scale 0.3s ease-out;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+}
+
+.btn-dark {
+    background-color: var(--color-dark);
+    color: var(--color-contrast);
+    border-color: var(--color-contrast);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-contrast);
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+.btn-light {
+    background-color: var(--color-contrast);
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+.btn-light:hover {
+    background-color: var(--color-dark);
+    color: var(--color-contrast);
+    border-color: var(--color-contrast);
+}

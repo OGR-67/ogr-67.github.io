@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Olivier Roos">
+  <meta name="description"
+    content="Entamant une alternance en qualité de concepteur / développeur d'applications, ce portfolio à pour but de me présenter à d'éventuels recruteurs ainsi que d'exposer mes motivations et mes projets personnels déjà réalisés.">
+
+  <title>Olivier Roos</title>
+  <link rel="icon" type="image/png" href="./favicon.png">
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="styles/variable.css">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/skills.css">
+  <link rel="stylesheet" href="styles/dividers.css">
+  <link rel="stylesheet" href="styles/abouteMe.css">
+  <link rel="stylesheet" href="styles/button.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/popup.css">
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/aef009d6c6.js" crossorigin="anonymous"></script>
+  <script src="scripts/animations.js" defer></script>
+  <script src="scripts/age.js" defer></script>
+  <script src="scripts/load.js" defer></script>
+  <script src="scripts/projects.js" defer></script>
+  <script src="scripts/popup.js" defer></script>
+
+</head>
+
+<body onload="loadPreviews()">
+  <div id="main">
+    <!-- Hero -->
+    <header class="hero masthead triangle">
+      <h1 class="hero-title">Olivier Roos</h1>
+      <p class="hero-text">Concepteur / développeur d'applications | Alternance</p>
+    </header>
+
+    <main>
+      <!-- Projects section -->
+      <section class="section">
+        <div class="section-container">
+          <h2 class="section-title">Mes Réalisations</h2>
+
+          <div class="cards-container">
+            <!-- Card -->
+            <div class="card">
+              <img id="randomecipePreview" class="card-image" src="#" alt="randomecipe preview">
+              <div class="card-content">
+                <h5 class="card-title">Randomecipe</h5>
+                <p class="card-description">Ce site vous sélectionne aléatoirement 5 recettes par semaines. Vous pouvez
+                  créer un compte et enregistrer les recettes dans vos favoris.</p>
+                <div class="card-actions">
+                  <button onclick="toggleRandomecipePopup()" class="css-button-arrow--black">En savoir plus</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card">
+              <img id="ambushPreview" class="card-image" src="#" alt="ambush preview">
+              <div class="card-content">
+                <h5 class="card-title">Ambush!!!</h5>
+                <p class="card-description">Dans ce petit jeu en 2D, vous devez résister aux vagues incessantes
+                  d'ennemis
+                  le
+                  plus longtemps possible. Bon courage! </p>
+                <div class="card-actions">
+                  <button onclick="toggleAmbushPopup()" class="css-button-arrow--black">En savoir plus</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card">
+              <img id="weddingPreview" class="card-image" src="#" alt="wedding preview">
+              <div class="card-content">
+                <h5 class="card-title">Wedding</h5>
+                <p class="card-description">Ce site fait office de faire part de mariage. Vous y trouverez les
+                  informations
+                  sur l'événement ainsi que la possibilité de confirmer votre présence.</p>
+                <div class="card-actions">
+                  <button onclick="toggleWeddingPopup()" class="css-button-arrow--black">En savoir plus</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section separator -->
+      <div class="divider div-transparent div-arrow-down"></div>
+
+      <!-- Skill section -->
+      <section class="section">
+        <div class="section-container">
+          <h2 class="section-title">Mes Compétences</h2>
+          <div class="skills-container">
+            <!-- Soft skills -->
+            <div class="skill-left-container">
+              <div class="skill-family">
+                <img src="medias/icons/soft-skills.png" alt="" class="skill-family-image">
+                <p class="skill-family-description">Soft skills</p>
+              </div>
+              <div class="skill-list">
+                <ul>
+                  <li>Autonomie</li>
+                  <li>Esprit d'Équipe</li>
+                  <li>Esprit d'Analyse et de Synthèse</li>
+                  <li>Capacité à résoudre des problèmes complexes</li>
+                  <li>Rigueur</li>
+                  <li>Communication</li>
+                  <li>Gestion du stress`</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- skill separator -->
+            <div class="divider div-transparent div-dot"></div>
+
+            <!-- Hard skills -->
+            <div class="skill-right-container">
+              <div class="skill-family">
+                <img src="medias/icons/hard-skills.png" alt="" class="skill-family-image">
+                <p class="skill-family-description">Hard skills</p>
+              </div>
+              <div class="skill-list">
+                <ul>
+                  <li>HTML 5 | CSS 3</li>
+                  <li>Bootstrap 4 / 5</li>
+                  <li>JavaScript | TypeScript</li>
+                  <li>Python 3</li>
+                  <li>SQL | MongoDB</li>
+                  <li>NodeJS | Express</li>
+                  <li>Django</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- skill separator -->
+            <div class="divider div-transparent div-dot"></div>
+
+            <!-- Tools and methods -->
+            <div class="skill-left-container">
+              <div class="skill-family">
+                <img src="medias/icons/tools.png" alt="" class="skill-family-image">
+                <p class="skill-family-description">Outils et méthodes</p>
+              </div>
+              <div class="skill-list">
+                <ul>
+                  <li>Windows | Mac | Linux</li>
+                  <li>VS Code | Pycharm</li>
+                  <li>Git | Github</li>
+                  <li>Docker</li>
+                  <li>Poo | Design Patterns (à l'étude)</li>
+                  <li>Wireframes</li>
+                  <li>Tests unitaires</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Section separator -->
+      <div class="divider div-transparent div-arrow-down"></div>
+
+      <section class="section">
+        <div class="section-container">
+          <div class="about-me">
+
+            <!-- Personnal informations -->
+            <div class="contact">
+              <img src="medias/avatar.jpeg" class="avatar" alt="The author">
+              <div class="socials">
+                <!-- Github -->
+                <div class="social-item">
+                  <p class="social-anim"><a href="https://github.com/OGR-67" target="_blank"
+                      rel="noopener noreferrer"><i class="fa-brands fa-github contact-logo"></i></a></p>
+                  <p class="contact-logo-description">Github</p>
+                </div>
+                <!-- LikedIn -->
+                <div class="social-item">
+                  <p class="social-anim"><a href="http://linkedin.com/in/olivier-roos/" target="_blank"
+                      rel="noopener noreferrer"><i class="fa-brands fa-linkedin contact-logo"></i></a>
+                  </p>
+                  <p class="contact-logo-description">LinkedIn</p>
+                </div>
+                <!-- Email -->
+                <div class="social-item">
+                  <p class="social-anim"><a href="mailto:roosolivier@gmail.com"><i
+                        class="fa-solid fa-envelope contact-logo"></i></a>
+                  </p>
+                  <p class="contact-logo-description">Mail</p>
+                </div>
+              </div>
+
+              <!-- Horizontal separator -->
+              <div class="divider div-transparent div-dot w-max"></div>
+
+              <ul>
+                <li><i class="fa-solid fa-user-tie contact-icon"></i>Olivier Roos</li>
+                <li><i class="fa-solid fa-cake-candles contact-icon"></i>1986 (<span class="age"></span> ans)</li>
+                <li><i class="fa-solid fa-paper-plane contact-icon"></i><a
+                    href="mailto:roosolivier@gmail.com">roosolivier@gmail.com</a></li>
+                <li><i class="fa-solid fa-phone contact-icon"></i><a href="tel:+33676540004">06 76 54 00 04</a></li>
+                <li><i class="fa-solid fa-file contact-icon"></i><a href="documents/cv.pdf" target="_blank">CV</a></li>
+              </ul>
+            </div>
+
+            <!-- About school and bio -->
+            <div class="about">
+              <div class="school">
+                <h2>À propos de la formation</h2>
+                <ul>
+                  <li>École: <b><a href="https://oclock.io/formations/alternance" target="_blank"
+                        rel="noopener noreferrer">O'Clock</a></b></li>
+                  <li>Titre: <b>Concepteur / développeur d'applications</b></li>
+                  <li>Durée: <b>16</b> mois</li>
+                  <li>Rythme: <b>1</b> semaine à l'école, <b>2</b> semaines en entreprise</li>
+                  <li>Possibilité de prolongation de <b>2 mois 100% en entreprise</b> avant ou après la formation</li>
+                  <li>Date: bientôt communiquées</li>
+                </ul>
+              </div>
+
+              <div class="divider div-transparent div-dot"></div>
+
+
+              <div class="bio">
+                <h2>À propos de moi</h2>
+                <p>
+                  À <span class="age"></span> ans, je capitalise déjà <span id="time"></span> années de bons et loyaux
+                  services dans l'armée de
+                  l'air. Maintenant,
+                  le
+                  temps du <b>changement</b> est venu.
+                  <br>
+                  Mes raisons sont diverses: géographique, mutation, etc...
+                </p>
+                <p>Ayant toujours travaillé dans le domaine <b>technique</b>, il est certain que je suis
+                  fait pour
+                  cela.
+                  <br>
+                  <b>Logique</b>, capacité à résoudre des <b>problèmes complexes</b>, esprit d'<b>analyse</b> et
+                  <b>autonomie</b> sont parmi les
+                  qualités nécessaires à mon quotidien.
+                </p>
+                <p>
+                  S'ajoutent à cela la <b>rigueur</b>, le respect des <b>règles et des procédures</b> ainsi qu'un sens
+                  de
+                  l'<b>engagement</b>
+                  propre au statut de militaire.
+                </p>
+                <p>
+                  Ces attributs, couplés à ma passion pour l'informatique, m'ont poussé à croire en moi et à engager
+                  une
+                  <b>reconversion</b> dans ce domaine.
+                  <br>
+                  Mon apprentissage en <b>autodidacte</b>, sur mon temps libre, m'a permis d'atteindre un certain niveau
+                  de
+                  compétence.
+                </p>
+                <p>
+                  Entamer une formation en <b>alternance</b> me permettra d'<b>assoir mes acquis</b>, d'acquérir de
+                  <b>nouvelles
+                    compétences</b> et de les <b>mettre en applications</b> au sein de l'<b>entreprise</b> qui me fera
+                  <b>confiance</b>,
+                  <br>
+                  Pourquoi pas la <b>vôtre</b>?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modals -->
+  <!-- Randomecipe -->
+  <div id="randomecipePopup" class="popup-container hidden">
+    <div class="popup ">
+      <p class="popup-xmark"><i class="fa-solid fa-xmark pointer" onclick="toggleRandomecipePopup()"></i></p>
+
+      <h3 class="popup-title">Randomecipe</h3>
+
+      <div class="popup-content">
+        <ul class="popup-techno">
+          <li>Python</li>
+          <li>Django</li>
+          <li>API Call</li>
+          <li>SQLite</li>
+          <li>HTML / CSS / Javascript</li>
+        </ul>
+        <div class="popup-description">
+          <p>
+            Ce site fut mon premier projet complet. Il utilise le framework
+            Django. Ce choix fut réfléchi car, par nature, Django nous force à
+            l'utilisation d'une architecture MVT et donc d'avoir une
+            application bien structurée.
+          </p>
+          <p>
+            Les recettes sont récupérées à l'aide d'une API de recettes
+            aléatoires.
+          </p>
+        </div>
+
+
+      </div>
+      <div class="popup-button-container">
+        <a href="https://randomecipe.herokuapp.com" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+          <i class="fa-solid fa-globe"></i> Visiter
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Ambush -->
+  <div id="ambushPopup" class="popup-container hidden">
+    <div class="popup ">
+      <p class="popup-xmark"><i class="fa-solid fa-xmark pointer" onclick="toggleAmbushPopup()"></i></p>
+
+      <h3 class="popup-title">Ambush!!!</h3>
+
+      <div class="popup-content">
+        <ul class="popup-techno">
+          <li>Python</li>
+          <li>PyGame</li>
+        </ul>
+        <div class="popup-description">
+          <p>
+            Ambush!!! est certainement le plus gros projet que j'ai réalisé en
+            termes de nombres de lignes de codes. Cependant, bien que quelques
+            implémentations furent un vrai casse-tête, le projet se révéla
+            finalement assez simple à réaliser.
+          </p>
+        </div>
+        <div class="popup-button-container">
+          <a href="https://github.com/OGR-67/ambush" target="_blank" rel="noopener noreferrer" class="btn btn-light"><i
+              class="fa-solid fa-code"></i> Voir le code</a>
+          <br>
+          <a href="executables/ambush_win.zip" class="btn btn-dark"><i class="fa-brands fa-windows"></i>
+            Télécharger pour Windows</a>
+          <a href="executables/ambush_osx.zip" class="btn btn-dark"><i class="fa-brands fa-apple"></i>
+            Télécharger pour Mac</a>
+          <a href="executables/ambush_linux.zip" class="btn btn-dark"><i class="fa-brands fa-linux"></i>
+            Télécharger pour Linux</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Wedding -->
+  <div id="weddingPopup" class="popup-container hidden">
+    <div class="popup ">
+      <p class="popup-xmark"><i class="fa-solid fa-xmark pointer" onclick="toggleWeddingPopup()"></i></p>
+
+      <h3 class="popup-title">Wedding</h3>
+
+      <div class="popup-content">
+        <ul class="popup-techno">
+          <li>NodeJS</li>
+          <li>Express</li>
+          <li>EJS</li>
+          <li>MongoDB - Mongoose</li>
+          <li>Bootstrap</li>
+        </ul>
+        <div class="popup-description">
+          <p>
+            Ce projet avait pour but de tester mon adaptabilité en créant une
+            appli web sous une autre technologie que celles que je connaissais
+            déjà. Au cours de ce projet, j'ai donc migré de python à Javascipt
+            avec NodeJS, de Django à Express avec EJS et de SQLite à MongoDB.</p>
+        </div>
+      </div>
+      <div class="popup-button-container">
+        <a href="https://wedding-announcement.herokuapp.com/" target="_blank" rel="noopener noreferrer"
+          class="btn btn-dark"><i class="fa-solid fa-globe"></i> Visiter</a>
+        <a href="https://github.com/OGR-67/wedding" target="_blank" rel="noopener noreferrer" class="btn btn-light"><i
+            class="fa-solid fa-code"></i> Voir
+          le code</a>
+      </div>
+
+
+    </div>
+  </div>
+
+</body>
+
+</html>

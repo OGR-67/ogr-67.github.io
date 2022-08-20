@@ -1,0 +1,25 @@
+@keyframes zoom-bell-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.2) rotate(-30deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(30deg);
+    }
+
+    75% {
+        transform: scale(1.2) rotate(-30deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.zoom-bell {
+    animation: zoom-bell-animation 0.5s ease-in-out;
+}
