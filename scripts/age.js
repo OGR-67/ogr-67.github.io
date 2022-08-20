@@ -20,7 +20,6 @@ function getTimeInArmy() {
 }
 
 function putAge(age) {
-    // document.querySelector("#age").innerText = age
     document.querySelectorAll(".age").forEach((element) => {
         element.innerText = age;
     })
