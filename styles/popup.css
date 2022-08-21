@@ -26,14 +26,21 @@
     text-align: center;
 }
 
-.popup-xmark {
+.popup-xmark-container {
     text-align: end;
     position: relative;
     right: 1.5rem;
     width: 100%;
     padding-top: 1rem;
-    font-size: 2rem;
     margin: 0;
+}
+
+.popup-xmark {
+    font-size: 2rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
 }
 
 .popup-content {
