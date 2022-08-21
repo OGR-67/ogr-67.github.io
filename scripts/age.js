@@ -1,33 +1,34 @@
-function dateDiffInYears(dateold, datenew) {
-    var ynew = datenew.getFullYear();
-    var yold = dateold.getFullYear();
-    var diff = ynew - yold;
-    return diff;
-}
+const birthday = new Date("1986-10-11");
+const jobStartDate = new Date("2003-09-01");
 
-function getAge() {
-    let now = new Date();
-    let birthday = new Date("1986-10-11");
-    let age = dateDiffInYears(birthday, now);
-    return age;
-}
 
-function getTimeInArmy() {
-    let now = new Date();
-    let start = new Date("2003-09-01");
-    let time = dateDiffInYears(start, now);
-    return time;
-}
+class Year {
 
-function putAge(age) {
-    document.querySelectorAll(".age").forEach((element) => {
-        element.innerText = age;
-    })
-}
+    static getElapsedYears(startDate) {
+        let currentYear = new Date().getFullYear();
+        let startYear = startDate.getFullYear();
+        let diff = currentYear - startYear;
+        return diff;
+    }
 
-function putTime(time) {
-    document.querySelector("#time").innerText = time
-}
+    static putYears(startDate, queryString) {
+        let years = Year.getElapsedYears(startDate);
+        if (queryString.startsWith("#")) {
+            Year.updateSingleHTMLElement(queryString, years);
+        } else if (queryString.startsWith(".")) {
+            Year.updateMultipleHTMLElement(queryString, years);
+        } else {
+            throw new Error("Invalid query string: " + queryString);
+        }
+    }
 
-putAge(getAge());
-putTime(getTimeInArmy());
+    static updateSingleHTMLElement(queryString, years) {
+        document.querySelector(queryString).innerText = years;
+    }
+
+    static updateMultipleHTMLElement(queryString, years) {
+        document.querySelectorAll(queryString).forEach((element) => {
+            element.innerText = years;
+        })
+    }
+}
