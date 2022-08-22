@@ -1,0 +1,16 @@
+{
+    "projects": [
+        {
+            "title": "randomecipe",
+            "description": "Ce site vous sélectionne aléatoirement 5 recettes par semaines. Vous pouvez créer un compte et enregistrer les recettes dans vos favoris."
+        },
+        {
+            "title": "ambush!!!",
+            "description": "Dans ce petit jeu en 2D, vous devez résister aux vagues incessantes d'ennemis le plus longtemps possible. Bon courage!"
+        },
+        {
+            "title": "wedding",
+            "description": "Ce site fait office de faire part de mariage. Vous y trouverez les informations sur l'événement ainsi que la possibilité de confirmer votre présence."
+        }
+    ]
+}
