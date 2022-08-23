@@ -4,21 +4,8 @@ function blurBackground() {
     document.querySelector("body").classList.toggle("no-scroll")
 }
 
-function toggleRandomecipePopup() {
+function togglePopup(project) {
     blurBackground()
-    let popup = document.querySelector("#randomecipePopup")
+    let popup = document.querySelector(`#${project}Popup`)
     popup.classList.toggle("hidden")
 }
-
-function toggleAmbushPopup() {
-    blurBackground()
-    let popup = document.querySelector("#ambushPopup")
-    popup.classList.toggle("hidden")
-}
-
-function toggleWeddingPopup() {
-    blurBackground()
-    let popup = document.querySelector("#weddingPopup")
-    popup.classList.toggle("hidden")
-}
-

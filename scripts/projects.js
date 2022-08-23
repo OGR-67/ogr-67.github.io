@@ -40,7 +40,7 @@ class CardButton {
 
     static create(project) {
         let id = CardTitle.formatTitle(project.title);
-        let html = `<div class="card-actions">\n\t<button id="${id}Button" class="css-button-arrow--black">En savoir plus</button>\n</div>`;
+        let html = `<div class="card-actions">\n\t<button onclick="togglePopup('${id}')" class="css-button-arrow--black">En savoir plus</button>\n</div>`;
         return html;
     }
 }
@@ -63,8 +63,16 @@ class CardImage {
 
     static create(project) {
         let name = CardTitle.formatTitle(project.title);
-        let html = `<img id="${name}Preview" class="card-image" src="medias/${name}_preview.gif" alt="${name} preview">`
+        let html = `<img id="${name}Preview" class="card-image" src="medias/projects_previews/${name}PreviewSingle.png" alt="${name} preview">`
         return html
+    }
+
+    static loadGif(project) {
+        document.querySelector(`#${project}Preview`).setAttribute('src', `medias/projects_previews/${project}_preview.gif`)
+    }
+
+    static loadPng(project) {
+        document.querySelector(`#${project}Preview`).setAttribute('src', `medias/projects_previews/${project}PreviewSingle.png`)
     }
 }
 
@@ -72,12 +80,13 @@ class CardImage {
 class CardBuild {
 
     constructor(project) {
+        this.project = CardTitle.formatTitle(project.title);
         this.image = CardImage.create(project);
         this.content = CardContent.create(project);
     };
 
     build() {
-        let html = `<div class="card">\n\t${this.image}\n\t${this.content}\n</div>`
+        let html = `<div class="card" onmouseover="CardImage.loadGif('${this.project}')" onmouseout="CardImage.loadPng('${this.project}')">\n\t${this.image}\n\t${this.content}\n</div>`
         return html
     }
 }
@@ -91,7 +100,6 @@ class HTMLUpdate {
     }
 }
 
-
 // MAIN
 async function createProjectsCards() {
     let datas = await Data.getDatas()
@@ -100,9 +108,3 @@ async function createProjectsCards() {
         HTMLUpdate.update(cardBuild.build(), "cards-container")
     });
 }
-
-// Todo
-// buttons do nothing
-
-
-
