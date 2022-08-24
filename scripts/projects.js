@@ -12,15 +12,22 @@ class Data {
 
 class CardTitle {
 
+    constructor(data) {
+        this.rawTitle = data.title;
+        this.html = this.build();
+    }
+
     static formatTitle(title) {
         let regex = /[^a-z]/g;
         let formatedTitle = title.toLowerCase().replace(regex, "");
         return formatedTitle;
     }
 
-    static create(project) {
-        let title = project.title[0].toUpperCase() + project.title.substring(1);
-        let html = `<h3 class="card-title">${title}</h3>`
+    build() {
+        let title = this.rawTitle[0].toUpperCase() + this.rawTitle.substring(1);
+        let html = document.createElement("h3");
+        html.setAttribute("class", "card-title");
+        html.innerHTML = title;
         return html
     }
 }
@@ -28,9 +35,16 @@ class CardTitle {
 
 class CardDescription {
 
-    static create(project) {
-        let description = project.description[0].toUpperCase() + project.description.substring(1);
-        let html = `<p class="card-description">${description}</p>`
+    constructor(data) {
+        this.rawDescription = data.description;
+        this.html = this.build();
+    }
+
+    build() {
+        let description = this.rawDescription[0].toUpperCase() + this.rawDescription.substring(1);
+        let html = document.createElement("p");
+        html.setAttribute("class", "card-description");
+        html.innerHTML = description;
         return html
     }
 }
@@ -38,22 +52,42 @@ class CardDescription {
 
 class CardButton {
 
-    static create(project) {
-        let id = CardTitle.formatTitle(project.title);
-        let html = `<div class="card-actions">\n\t<button onclick="togglePopup('${id}')" class="css-button-arrow--black">En savoir plus</button>\n</div>`;
-        return html;
+    constructor(data) {
+        this.title = CardTitle.formatTitle(data.title);
+        this.html = this.build()
+    }
+
+    build() {
+        let html = document.createElement('div');
+        html.setAttribute("class", "card-actions");
+
+        let button = document.createElement('button');
+        button.setAttribute("class", "css-button-arrow--black");
+        button.setAttribute("onclick", `togglePopup("${this.title}")`)
+        button.innerHTML = "En savoir plus";
+
+        html.appendChild(button);
+        return html
     }
 }
 
 
 class CardContent {
 
-    static create(project) {
-        let title = CardTitle.create(project);
-        let description = CardDescription.create(project);
-        let button = CardButton.create(project);
+    constructor(data) {
+        this.title = new CardTitle(data);
+        this.description = new CardDescription(data);
+        this.button = new CardButton(data);
+        this.html = this.build()
+    }
 
-        let html = `<div class="card-content">\n\t${title}\n\t${description}\n\t${button}\n</div>`
+    build() {
+        let html = document.createElement('div');
+        html.setAttribute("class", "card-content");
+
+        html.appendChild(this.title.html)
+        html.appendChild(this.description.html)
+        html.appendChild(this.button.html)
         return html
     }
 }
@@ -61,50 +95,70 @@ class CardContent {
 
 class CardImage {
 
-    static create(project) {
-        let name = CardTitle.formatTitle(project.title);
-        let html = `<img id="${name}Preview" class="card-image" src="medias/projects_previews/${name}PreviewSingle.png" alt="${name} preview">`
-        return html
+    constructor(data) {
+        this.title = CardTitle.formatTitle(data.title);
+        this.html = this.build();
+        this.instance = this
     }
 
-    static loadGif(project) {
-        document.querySelector(`#${project}Preview`).setAttribute('src', `medias/projects_previews/${project}_preview.gif`)
+    build() {
+        let html = document.createElement('img');
+        html.id = `${this.title}Preview`;
+        html.setAttribute("class", "card-image");
+        html.src = `medias/projects_previews/${this.title}PreviewSingle.png`
+        html.alt = this.title + " preview";
+
+        return html;
     }
 
-    static loadPng(project) {
-        document.querySelector(`#${project}Preview`).setAttribute('src', `medias/projects_previews/${project}PreviewSingle.png`)
+
+    static toGif(project) {
+        let src = `medias/projects_previews/${project}_preview.gif`
+        document.querySelector(`#${project}Preview`).setAttribute('src', src)
+    }
+
+    static toPng(project) {
+        let src = `medias/projects_previews/${project}PreviewSingle.png`
+        document.querySelector(`#${project}Preview`).setAttribute('src', src)
     }
 }
 
 
-class CardBuild {
+class Card {
 
-    constructor(project) {
-        this.project = CardTitle.formatTitle(project.title);
-        this.image = CardImage.create(project);
-        this.content = CardContent.create(project);
+    constructor(data) {
+        this.title = CardTitle.formatTitle(data.title);
+        this.image = new CardImage(data);
+        this.content = new CardContent(data);
+        this.html = this.build();
     };
 
     build() {
-        let html = `<div class="card" onmouseover="CardImage.loadGif('${this.project}')" onmouseout="CardImage.loadPng('${this.project}')">\n\t${this.image}\n\t${this.content}\n</div>`
+        let html = document.createElement("div");
+        html.className = "card";
+        html.setAttribute("onmouseover", `CardImage.toGif("${this.title}")`)
+        html.setAttribute("onmouseout", `CardImage.toPng("${this.title}")`)
+
+        html.appendChild(this.image.html);
+        html.appendChild(this.content.html);
         return html
     }
-}
 
-
-class HTMLUpdate {
-
-    static update(build, selector) {
-        let node = document.querySelector(`.${selector}`)
-        node.innerHTML += build
+    inject() {
+        let container = document.querySelector(".cards-container");
+        container.appendChild(this.html);
     }
 }
+
+
+
+
 
 // MAIN
 async function createProjectsCards() {
     let datas = await Data.getDatas()
     datas.forEach(project => {
-        let cardBuild = new CardBuild(project);
-        HTMLUpdate.update(cardBuild.build(), "cards-container")
+        let card = new Card(project);
+        card.inject();
     });
 }
