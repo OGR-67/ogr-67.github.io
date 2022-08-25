@@ -97,23 +97,42 @@ class CardImage {
     constructor(data) {
         this.title = CardTitle.formatTitle(data.title);
         this.html = this.build();
-        this.instance = this
+        this.loaded = false;
     }
 
     build() {
-        let html = document.createElement('img');
-        html.id = `${this.title}Preview`;
-        html.setAttribute("class", "card-image");
-        html.src = `medias/projects_previews/${this.title}PreviewSingle.png`
-        html.alt = this.title + " preview";
+        let html = document.createElement('div');
+        html.setAttribute("class", "card-image-container");
+        html.id = `${this.title}-img-container`
 
+        let image = document.createElement('img');
+        image.id = `${this.title}Preview`;
+        image.setAttribute("class", "card-image");
+        image.src = `medias/projects_previews/${this.title}PreviewSingle.png`
+        image.alt = this.title + " preview";
+
+        html.appendChild(image)
         return html;
     }
 
 
     static toGif(project) {
         let src = `medias/projects_previews/${project}_preview.gif`
-        document.querySelector(`#${project}Preview`).setAttribute('src', src)
+        let image = document.querySelector(`#${project}Preview`);
+        image.setAttribute('src', src)
+
+        let container = document.querySelector(`#${project}-img-container`)
+        let spiner = document.createElement('div')
+        spiner.setAttribute("class", "lds-ellipsis");
+        for (let i = 0; i < 4; i++) {
+            let div = document.createElement('div')
+            spiner.appendChild(div)
+        }
+        container.prepend(spiner)
+        image.addEventListener('load', () => {
+            console.log("loaded");
+            spiner.remove();
+        });
     }
 
     static toPng(project) {

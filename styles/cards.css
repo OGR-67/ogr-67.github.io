@@ -21,6 +21,10 @@
 
 }
 
+.card-image-container {
+    width: inherit;
+}
+
 .card-image {
     height: 175px;
     width: inherit;
