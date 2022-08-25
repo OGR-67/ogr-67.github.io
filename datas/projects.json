@@ -2,15 +2,91 @@
     "projects": [
         {
             "title": "randomecipe",
-            "description": "Ce site vous sélectionne aléatoirement 5 recettes par semaines. Vous pouvez créer un compte et enregistrer les recettes dans vos favoris."
+            "description": "Ce site vous sélectionne aléatoirement 5 recettes par semaines. Vous pouvez créer un compte et enregistrer les recettes dans vos favoris.",
+            "technos": [
+                "Python",
+                "Django",
+                "API Call",
+                "SQLite",
+                "HTML | CSS | JavaScript"
+            ],
+            "popupDescription": [
+                "Ce site fut mon premier projet complet. Il utilise le framework Django. Ce choix fut réfléchi car, par nature, Django nous force à l'utilisation d'une architecture MVT et donc d'avoir une application bien structurée.",
+                "Les recettes sont récupérées à l'aide d'une API de recettes aléatoires."
+            ],
+            "popupButtons": [
+                {
+                    "link": "https://randomecipe.herokuapp.com",
+                    "style": "dark",
+                    "icon": "<i class='fa-solid fa-globe'></i>",
+                    "text": "Visiter"
+                }
+            ]
         },
         {
             "title": "ambush!!!",
-            "description": "Dans ce petit jeu en 2D, vous devez résister aux vagues incessantes d'ennemis le plus longtemps possible. Bon courage!"
+            "description": "Dans ce petit jeu en 2D, vous devez résister aux vagues incessantes d'ennemis le plus longtemps possible. Bon courage!",
+            "technos": [
+                "Python",
+                "PyGame"
+            ],
+            "popupDescription": [
+                "Ambush!!! est certainement le plus gros projet que j'ai réalisé en termes de nombres de lignes de codes. Cependant, bien que quelques implémentations furent un vrai casse-tête, le projet se révéla finalement assez simple à réaliser."
+            ],
+            "popupButtons": [
+                {
+                    "link": "https://github.com/OGR-67/ambush",
+                    "style": "light",
+                    "icon": "<i class='fa-solid fa-code'></i>",
+                    "text": "Voir le code"
+                },
+                {
+                    "link": "executables/ambush_win.zip",
+                    "style": "dark",
+                    "icon": "<i class='fa-brands fa-windows'></i>",
+                    "text": "Télécharger pour Windows"
+                },
+                {
+                    "link": "executables/ambush_osx.zip",
+                    "style": "dark",
+                    "icon": "<i class='fa-brands fa-apple'></i>",
+                    "text": "Télécharger pour Mac"
+                },
+                {
+                    "link": "executables/ambush_linux.zip",
+                    "style": "dark",
+                    "icon": "<i class='fa-brands fa-linux'></i>",
+                    "text": "Télécharger pour Linux"
+                }
+            ]
         },
         {
             "title": "wedding",
-            "description": "Ce site fait office de faire part de mariage. Vous y trouverez les informations sur l'événement ainsi que la possibilité de confirmer votre présence."
+            "description": "Ce site fait office de faire part de mariage. Vous y trouverez les informations sur l'événement ainsi que la possibilité de confirmer votre présence.",
+            "technos": [
+                "NodeJS",
+                "Express",
+                "EJS",
+                "MongoDB - Mongoose",
+                "Bootstrap"
+            ],
+            "popupDescription": [
+                "Ce projet avait pour but de tester mon adaptabilité en créant une appli web sous une autre technologie que celles que je connaissais déjà. Au cours de ce projet, j'ai donc migré de python à Javascipt avec NodeJS, de Django à Express avec EJS et de SQLite à MongoDB."
+            ],
+            "popupButtons": [
+                {
+                    "link": "https://wedding-announcement.herokuapp.com/",
+                    "style": "dark",
+                    "icon": "<i class='fa-solid fa-globe'></i>",
+                    "text": "Visiter"
+                },
+                {
+                    "link": "https://github.com/OGR-67/wedding",
+                    "style": "light",
+                    "icon": "<i class='fa-solid fa-code'></i>",
+                    "text": "Voir le code"
+                }
+            ]
         }
     ]
 }

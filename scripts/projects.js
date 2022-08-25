@@ -9,7 +9,6 @@ class Data {
     }
 }
 
-
 class CardTitle {
 
     constructor(data) {
@@ -63,7 +62,7 @@ class CardButton {
 
         let button = document.createElement('button');
         button.setAttribute("class", "css-button-arrow--black");
-        button.setAttribute("onclick", `togglePopup("${this.title}")`)
+        button.setAttribute("onclick", `PopupContainer.togglePopup("${this.title}")`)
         button.innerHTML = "En savoir plus";
 
         html.appendChild(button);
@@ -151,14 +150,14 @@ class Card {
 }
 
 
-
-
-
 // MAIN
-async function createProjectsCards() {
+async function createProjects() {
     let datas = await Data.getDatas()
     datas.forEach(project => {
         let card = new Card(project);
         card.inject();
+
+        let popup = new PopupContainer(project);
+        popup.inject();
     });
 }
