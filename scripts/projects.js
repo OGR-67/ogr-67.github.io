@@ -130,7 +130,6 @@ class CardImage {
         }
         container.prepend(spiner)
         image.addEventListener('load', () => {
-            console.log("loaded");
             spiner.remove();
         });
     }
