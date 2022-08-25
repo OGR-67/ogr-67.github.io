@@ -1,7 +1,3 @@
-const birthday = new Date("1986-10-11");
-const jobStartDate = new Date("2003-09-01");
-
-
 class Year {
 
     static getElapsedYears(startDate) {
@@ -32,3 +28,12 @@ class Year {
         })
     }
 }
+
+// MAIN
+async function createDates() {
+    const birthday = new Date("1986-10-11");
+    const jobStartDate = new Date("2003-09-01");
+    Year.putYears(birthday, ".age")
+    Year.putYears(jobStartDate, "#time")
+}
+
