@@ -104,6 +104,8 @@ class CardImage {
         let html = document.createElement('div');
         html.setAttribute("class", "card-image-container");
         html.id = `${this.title}-img-container`
+        html.setAttribute("onmouseover", `CardImage.toGif("${this.title}")`)
+        html.setAttribute("onmouseout", `CardImage.toPng("${this.title}")`)
 
         let image = document.createElement('img');
         image.id = `${this.title}Preview`;
@@ -153,8 +155,6 @@ class Card {
     build() {
         let html = document.createElement("div");
         html.className = "card";
-        html.setAttribute("onmouseover", `CardImage.toGif("${this.title}")`)
-        html.setAttribute("onmouseout", `CardImage.toPng("${this.title}")`)
 
         html.appendChild(this.image.html);
         html.appendChild(this.content.html);
