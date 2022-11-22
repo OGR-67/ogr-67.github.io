@@ -16,7 +16,7 @@
             ],
             "popupButtons": [
                 {
-                    "link": "https://randomecipe.herokuapp.com",
+                    "link": "https://ogr.pythonanywhere.com/",
                     "style": "dark",
                     "icon": "<i class='fa-solid fa-globe'></i>",
                     "text": "Visiter"
@@ -75,7 +75,7 @@
             ],
             "popupButtons": [
                 {
-                    "link": "https://wedding-announcement.herokuapp.com/",
+                    "link": "https://us-central1-wedding-announcement.cloudfunctions.net/app",
                     "style": "dark",
                     "icon": "<i class='fa-solid fa-globe'></i>",
                     "text": "Visiter"
