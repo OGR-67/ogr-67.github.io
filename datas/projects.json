@@ -75,7 +75,7 @@
             ],
             "popupButtons": [
                 {
-                    "link": "https://us-central1-wedding-announcement.cloudfunctions.net/app",
+                    "link": "https://wedding-announcement.onrender.com",
                     "style": "dark",
                     "icon": "<i class='fa-solid fa-globe'></i>",
                     "text": "Visiter"
