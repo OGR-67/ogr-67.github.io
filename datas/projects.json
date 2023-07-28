@@ -87,6 +87,28 @@
                     "text": "Voir le code"
                 }
             ]
+        },
+        {
+            "title": "Komportementalist",
+            "description": "Developpeur back-end",
+            "technos": [
+                "NodeJS",
+                "Express",
+                "PostgreSQL",
+                "Typescript",
+                "TypeORM",
+                "Chai",
+                "Mocha",
+                "Docker",
+                "Github CI/CD",
+                "OpenAPI-swagger",
+                "Google Cloud Platform",
+                "Sendgrid"
+            ],
+            "popupDescription": [
+                "J'ai rejoint l'équipe en place en tant que renfort pour développer le back-end de l'application web. Ce premier emploi m'a permis d'evoluer dans un environnement professionnel et de travailler en equipe sur un projet d'envergure."
+            ],
+            "popupButtons": []
         }
     ]
 }
