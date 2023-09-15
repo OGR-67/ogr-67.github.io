@@ -71,7 +71,7 @@
                 "Bootstrap"
             ],
             "popupDescription": [
-                "Ce projet avait pour but de tester mon adaptabilité en créant une appli web sous une autre technologie que celles que je connaissais déjà. Au cours de ce projet, j'ai donc migré de python à Javascipt avec NodeJS, de Django à Express avec EJS et de SQLite à MongoDB."
+                "Ce projet avait pour but de démontrer ma flexibilité en migrant d'une appli Python/Django/SQLite vers une solution en JavaScript avec NodeJS, Express/EJS et MongoDB. Le site peut être long à charger car il est hébergé sur un serveur gratuit."
             ],
             "popupButtons": [
                 {
