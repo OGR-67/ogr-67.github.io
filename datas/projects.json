@@ -12,7 +12,7 @@
             ],
             "popupDescription": [
                 "Ce site fut mon premier projet complet. Il utilise le framework Django. Ce choix fut réfléchi car, par nature, Django nous force à l'utilisation d'une architecture MVT et donc d'avoir une application bien structurée.",
-                "Les recettes sont récupérées à l'aide d'une API de recettes aléatoires."
+                "Les recettes sont récupérées à l'aide d'une API de recettes aléatoires. Le style cependant, mériterai une refonte"
             ],
             "popupButtons": [
                 {
@@ -71,7 +71,7 @@
                 "Bootstrap"
             ],
             "popupDescription": [
-                "Ce projet avait pour but de démontrer ma flexibilité en migrant d'une appli Python/Django/SQLite vers une solution en JavaScript avec NodeJS, Express/EJS et MongoDB. Le site peut être long à charger car il est hébergé sur un serveur gratuit."
+                "Ce projet avait pour but de démontrer ma flexibilité en migrant d'une appli Python/Django/SQLite vers une solution en JavaScript avec NodeJS, Express/EJS et MongoDB. Ce site est hébergé sur render, le free-tier ne permet sa mise en ligne que pendant 15 minutes en cas d'inactivité. Il y a donc de forte chances que le lien ne fonctionne pas sans action de ma part."
             ],
             "popupButtons": [
                 {
@@ -109,6 +109,32 @@
                 "J'ai rejoint l'équipe en place en tant que renfort pour développer le back-end de l'application web. Ce premier emploi m'a permis d'evoluer dans un environnement professionnel et de travailler en equipe sur un projet d'envergure."
             ],
             "popupButtons": []
+        },
+        {
+            "title": "Movie Picker",
+            "description": "Une application web de sélection de films, avec des filtres et une gestion de l'authentification",
+            "technos": [
+                "Python",
+                "Flask",
+                "SQLAchemy",
+                "SQLite",
+                "Pytest",
+                "mypy",
+                "Templating",
+                "TDD",
+                "Architechture hexagonale"
+            ],
+            "popupDescription": [
+                "L'objectif de ce projet était de m'entrainer a un développement guidé par les tests, et ce, dans une architechture hexagonale afin de bien séparer la logique métier de son implémentation technique. J'ai choisi pour les migrations d'utiliser SQLAlchemy mais de tout de même écrire les requêtes en dur afin d'avoir une maitrise totale sur les comportements. J'explique ce choix plus en détail dans le readme du projet."
+            ],
+            "popupButtons": [
+                {
+                    "link": "https://github.com/OGR-67/Movie_Picker",
+                    "style": "light",
+                    "icon": "<i class='fa-solid fa-code'></i>",
+                    "text": "Voir le code"
+                }
+            ]
         }
     ]
 }
